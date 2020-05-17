@@ -1,0 +1,79 @@
+CREATE TABLE accounts (
+	user_id	INT(16) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    username TINYTEXT NOT NULL,
+    email TINYTEXT NOT NULL,
+    password LONGTEXT NOT NULL,
+    notification ENUM('0','1') NOT NULL DEFAULT '1',
+    permission INT(8) NOT NULL DEFAULT '1'
+);
+
+CREATE TABLE news (
+    news_id INT(16) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    news_author TINYTEXT NOT NULL,
+    news_title VARCHAR(128) NOT NULL,
+    news_content LONGTEXT NOT NULL,
+    news_date DATETIME
+);
+
+CREATE TABLE categories (
+    cat_id INT(16) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    cat_title VARCHAR(128) NOT NULL,
+    last_date DATETIME,
+    last_user int(16)
+);
+
+CREATE TABLE topics (
+    topic_id INT(16) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    cat_id INT(16) NOT NULL,
+    topic_title VARCHAR(128) NOT NULL,
+    topic_author TINYTEXT NOT NULL,
+    topic_last_user TINYTEXT NOT NULL,
+    topic_date DATETIME NOT NULL,
+    topic_reply DATETIME NOT NULL,
+    topic_replies INT(16) NOT NULL DEFAULT '1',
+    topic_views INT(16) NOT NULL DEFAULT '0'
+);
+
+CREATE TABLE posts (
+    post_id INT(16) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    cat_id INT(16) NOT NULL,
+    topic_id INT(16) NOT NULL,
+    post_author TINYTEXT NOT NULL,
+    post_content LONGTEXT NOT NULL,
+    post_date DATETIME
+);
+
+INSERT INTO news (news_author, news_title, news_content, news_date) VALUES
+('TreZc0', 'Lorum Ipsum', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget hendrerit dui. Nullam tempus turpis lacus, ut molestie arcu mollis ac. Curabitur semper placerat malesuada. Nullam placerat magna sollicitudin tellus cursus, quis mattis nisi faucibus. Suspendisse ligula neque, posuere a orci nec, bibendum congue metus. Donec finibus sit amet nulla eu euismod. Aliquam lectus quam, posuere in porta dictum, aliquet nec lorem. Aliquam molestie nisl vitae purus mollis, id suscipit quam porta. Duis accumsan in lorem a pretium. Quisque ut cursus diam.\r\nAenean laoreet, lectus eget malesuada pretium, lectus nisl scelerisque lectus, ut rutrum leo orci hendrerit odio. Cras vel ultricies quam. Phasellus sit amet quam eu lectus sodales commodo. Proin mollis odio vel laoreet luctus. Fusce ac sapien id odio fermentum convallis. Mauris eget cursus nisi. Maecenas ut nisl ac velit scelerisque maximus. Duis vel arcu nunc. Nunc ultricies neque ipsum, vitae aliquam lorem mattis non. Nullam interdum leo id erat ultricies mattis. Curabitur et feugiat dui.\r\nPraesent luctus magna sit amet neque auctor volutpat vitae in dolor. Suspendisse id pharetra elit. Curabitur sit amet justo eu mi malesuada iaculis vel et nunc. Donec aliquam massa et malesuada lobortis. Sed ut gravida tellus, id tempor dui. Fusce mollis diam mi, ut eleifend nisl fringilla a. Sed sit amet luctus nisl. Nulla facilisi. Suspendisse lobortis dolor quam, sit amet maximus tellus blandit ut. Cras commodo suscipit urna non iaculis. Sed ipsum nisl, hendrerit id fringilla et, porttitor in nunc. Sed turpis odio, laoreet eu purus quis, tincidunt sodales erat. Sed maximus sapien at dictum aliquet. Phasellus congue felis velit, ut molestie purus malesuada nec. Aenean ullamcorper magna eu facilisis posuere.\r\nSed sed enim tristique, scelerisque sapien sit amet, rhoncus enim. Phasellus gravida turpis urna, vel auctor eros luctus eget. Aenean dignissim gravida est sit amet cursus. Vestibulum ultrices tempor molestie. Proin non ante nisi. Praesent tempor convallis lectus, eu volutpat purus scelerisque ac. Suspendisse augue quam, tristique eget pretium at, porttitor in purus. Fusce nec arcu placerat, semper sapien sit amet, elementum turpis. Maecenas commodo tellus sit amet turpis hendrerit dictum. Ut aliquet mi vel aliquam suscipit. Nulla a tellus id augue laoreet molestie eu eget odio.\r\nSed malesuada nisl ut urna dignissim, sit amet molestie diam egestas. Praesent congue elementum lectus at varius. Aliquam ac purus vel urna euismod feugiat eget ac turpis. Vestibulum elementum, metus et convallis iaculis, mauris leo iaculis libero, vitae vestibulum tellus nisl et lorem. Ut accumsan arcu ex, sit amet pharetra augue malesuada in. Phasellus urna lacus, ultricies sed mauris quis, pulvinar pharetra ex. Aenean quis nisl a eros dapibus maximus. Suspendisse vitae fermentum enim, a iaculis nibh. Nam eget ipsum sit amet arcu pellentesque fermentum eu vitae nisi. Suspendisse tempus sapien at laoreet posuere. Nulla vel lectus sed quam eleifend dignissim in eu risus. Mauris pharetra pellentesque dolor in consequat. Duis vestibulum tortor ut nisl fermentum rhoncus.', '2020-05-14 23:31:14'),
+('TreZc0', 'Lorum Ipsum', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget hendrerit dui. Nullam tempus turpis lacus, ut molestie arcu mollis ac. Curabitur semper placerat malesuada. Nullam placerat magna sollicitudin tellus cursus, quis mattis nisi faucibus. Suspendisse ligula neque, posuere a orci nec, bibendum congue metus. Donec finibus sit amet nulla eu euismod. Aliquam lectus quam, posuere in porta dictum, aliquet nec lorem. Aliquam molestie nisl vitae purus mollis, id suscipit quam porta. Duis accumsan in lorem a pretium. Quisque ut cursus diam.\r\nAenean laoreet, lectus eget malesuada pretium, lectus nisl scelerisque lectus, ut rutrum leo orci hendrerit odio. Cras vel ultricies quam. Phasellus sit amet quam eu lectus sodales commodo. Proin mollis odio vel laoreet luctus. Fusce ac sapien id odio fermentum convallis. Mauris eget cursus nisi. Maecenas ut nisl ac velit scelerisque maximus. Duis vel arcu nunc. Nunc ultricies neque ipsum, vitae aliquam lorem mattis non. Nullam interdum leo id erat ultricies mattis. Curabitur et feugiat dui.\r\nPraesent luctus magna sit amet neque auctor volutpat vitae in dolor. Suspendisse id pharetra elit. Curabitur sit amet justo eu mi malesuada iaculis vel et nunc. Donec aliquam massa et malesuada lobortis. Sed ut gravida tellus, id tempor dui. Fusce mollis diam mi, ut eleifend nisl fringilla a. Sed sit amet luctus nisl. Nulla facilisi. Suspendisse lobortis dolor quam, sit amet maximus tellus blandit ut. Cras commodo suscipit urna non iaculis. Sed ipsum nisl, hendrerit id fringilla et, porttitor in nunc. Sed turpis odio, laoreet eu purus quis, tincidunt sodales erat. Sed maximus sapien at dictum aliquet. Phasellus congue felis velit, ut molestie purus malesuada nec. Aenean ullamcorper magna eu facilisis posuere.\r\nSed sed enim tristique, scelerisque sapien sit amet, rhoncus enim. Phasellus gravida turpis urna, vel auctor eros luctus eget. Aenean dignissim gravida est sit amet cursus. Vestibulum ultrices tempor molestie. Proin non ante nisi. Praesent tempor convallis lectus, eu volutpat purus scelerisque ac. Suspendisse augue quam, tristique eget pretium at, porttitor in purus. Fusce nec arcu placerat, semper sapien sit amet, elementum turpis. Maecenas commodo tellus sit amet turpis hendrerit dictum. Ut aliquet mi vel aliquam suscipit. Nulla a tellus id augue laoreet molestie eu eget odio.\r\nSed malesuada nisl ut urna dignissim, sit amet molestie diam egestas. Praesent congue elementum lectus at varius. Aliquam ac purus vel urna euismod feugiat eget ac turpis. Vestibulum elementum, metus et convallis iaculis, mauris leo iaculis libero, vitae vestibulum tellus nisl et lorem. Ut accumsan arcu ex, sit amet pharetra augue malesuada in. Phasellus urna lacus, ultricies sed mauris quis, pulvinar pharetra ex. Aenean quis nisl a eros dapibus maximus. Suspendisse vitae fermentum enim, a iaculis nibh. Nam eget ipsum sit amet arcu pellentesque fermentum eu vitae nisi. Suspendisse tempus sapien at laoreet posuere. Nulla vel lectus sed quam eleifend dignissim in eu risus. Mauris pharetra pellentesque dolor in consequat. Duis vestibulum tortor ut nisl fermentum rhoncus.', '2020-05-14 23:33:14'),
+('TreZc0', 'Lorum Ipsum', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget hendrerit dui. Nullam tempus turpis lacus, ut molestie arcu mollis ac. Curabitur semper placerat malesuada. Nullam placerat magna sollicitudin tellus cursus, quis mattis nisi faucibus. Suspendisse ligula neque, posuere a orci nec, bibendum congue metus. Donec finibus sit amet nulla eu euismod. Aliquam lectus quam, posuere in porta dictum, aliquet nec lorem. Aliquam molestie nisl vitae purus mollis, id suscipit quam porta. Duis accumsan in lorem a pretium. Quisque ut cursus diam.\r\nAenean laoreet, lectus eget malesuada pretium, lectus nisl scelerisque lectus, ut rutrum leo orci hendrerit odio. Cras vel ultricies quam. Phasellus sit amet quam eu lectus sodales commodo. Proin mollis odio vel laoreet luctus. Fusce ac sapien id odio fermentum convallis. Mauris eget cursus nisi. Maecenas ut nisl ac velit scelerisque maximus. Duis vel arcu nunc. Nunc ultricies neque ipsum, vitae aliquam lorem mattis non. Nullam interdum leo id erat ultricies mattis. Curabitur et feugiat dui.\r\nPraesent luctus magna sit amet neque auctor volutpat vitae in dolor. Suspendisse id pharetra elit. Curabitur sit amet justo eu mi malesuada iaculis vel et nunc. Donec aliquam massa et malesuada lobortis. Sed ut gravida tellus, id tempor dui. Fusce mollis diam mi, ut eleifend nisl fringilla a. Sed sit amet luctus nisl. Nulla facilisi. Suspendisse lobortis dolor quam, sit amet maximus tellus blandit ut. Cras commodo suscipit urna non iaculis. Sed ipsum nisl, hendrerit id fringilla et, porttitor in nunc. Sed turpis odio, laoreet eu purus quis, tincidunt sodales erat. Sed maximus sapien at dictum aliquet. Phasellus congue felis velit, ut molestie purus malesuada nec. Aenean ullamcorper magna eu facilisis posuere.\r\nSed sed enim tristique, scelerisque sapien sit amet, rhoncus enim. Phasellus gravida turpis urna, vel auctor eros luctus eget. Aenean dignissim gravida est sit amet cursus. Vestibulum ultrices tempor molestie. Proin non ante nisi. Praesent tempor convallis lectus, eu volutpat purus scelerisque ac. Suspendisse augue quam, tristique eget pretium at, porttitor in purus. Fusce nec arcu placerat, semper sapien sit amet, elementum turpis. Maecenas commodo tellus sit amet turpis hendrerit dictum. Ut aliquet mi vel aliquam suscipit. Nulla a tellus id augue laoreet molestie eu eget odio.\r\nSed malesuada nisl ut urna dignissim, sit amet molestie diam egestas. Praesent congue elementum lectus at varius. Aliquam ac purus vel urna euismod feugiat eget ac turpis. Vestibulum elementum, metus et convallis iaculis, mauris leo iaculis libero, vitae vestibulum tellus nisl et lorem. Ut accumsan arcu ex, sit amet pharetra augue malesuada in. Phasellus urna lacus, ultricies sed mauris quis, pulvinar pharetra ex. Aenean quis nisl a eros dapibus maximus. Suspendisse vitae fermentum enim, a iaculis nibh. Nam eget ipsum sit amet arcu pellentesque fermentum eu vitae nisi. Suspendisse tempus sapien at laoreet posuere. Nulla vel lectus sed quam eleifend dignissim in eu risus. Mauris pharetra pellentesque dolor in consequat. Duis vestibulum tortor ut nisl fermentum rhoncus.', '2020-05-14 23:35:14');
+
+
+INSERT INTO accounts (username, email, password, permission) VALUES
+    ('TreZc0','trezco@zsr.com','$2y$10$oCES1qkANoK4bUnq6QLnROCD/bLj3qqGOtJcu7ZP43TQSpOkYfAtq','3'),
+    ('Mod','mod@zsr.com','$2y$10$LuRpUHMgpnlA/ctC3DrVquJ2l5ogLdsin1pNoxnNkJtK052xvmIVS','2'),
+    ('test','test@gmail.com','$2y$10$Z5sqNYINpdYXX8.ItlH5xu4fRnYtK9YMGQiG2ifnGeCOHdpcHMSXa','1');
+
+INSERT INTO categories (cat_title) VALUES
+    ('The Legend of Zelda'),
+    ('Zelda 2: The Adventure of Link'),
+    ('A Link to the Past'),
+    ("Link's Awakening"),
+    ('Ocarina of Time'),
+    ("Majora's Mask"),
+    ('Oracle of Ages'),
+    ('Oracle of Seasons'),
+    ('Four Swords'),
+    ('The Wind Waker'),
+    ('Four Swords Adventure'),
+    ('The Minish Cap'),
+    ('Twilight Princess'),
+    ('Phantom Hourglass'),
+    ('Spirit Tracks'),
+    ('Skyward Sword'),
+    ('A Link Between Worlds'),
+    ('Tri-Force Heroes'),
+    ('Breath of the Wild');
+
+
+NOTE: PASSWORDS ARE ENCRYPTED, TREZ'S PASSWORD IS 'pass', MOD'S PASSWORD IS 'password' AND TEST'S PASSWORD IS '123'.

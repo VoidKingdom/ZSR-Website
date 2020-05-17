@@ -1,0 +1,425 @@
+/*Style sheet used for the entire website*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Roboto, sans-serif;
+}
+
+p, a, h2, h3, dd, dt{
+    color: white;
+}
+h1{
+    color: #de2c26;
+}
+
+h3{
+    font-weight: 400;
+}
+
+body {
+    background: url("../images/bg.jpg");
+}
+
+.mainnav {
+    background: #383838;
+    display: flex;
+}
+
+.mainnav > span:first-child {
+    margin-right: auto;
+}
+
+.mainnav > span:last-child {
+    margin-left: auto;
+    visibility: hidden;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0 0 0;
+}
+
+.wrapper h1{
+    margin: 20px;
+}
+
+.wrapper h2{
+    background: #123012;
+    display: flex;
+    padding: 10px;
+    border: goldenrod solid 1px;
+}
+
+.wrapper a{
+    width: 100%;
+    padding: 20px;
+    margin-top: 10px;
+    background: #004900;
+    font-size: 20px;
+}
+
+.lswrapper{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.lswrapper div{
+    background: #112010;
+    padding: 10px;
+    text-align: center;
+}
+
+.lswrapper div p{
+    text-align: left;
+    font-size: 18px;
+}
+
+.lswrapper div{
+    margin-top: 10px;
+}
+
+.lswrapper div form input{
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #d2d2d2;
+}
+
+.lswrapper div form button{
+    background: goldenrod;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.logo {
+    height: 50px;
+    cursor: pointer;
+    margin-top: 4px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.navitem {
+    display: none;
+}
+
+.open {
+    color: #fff;
+    font-size: 30px;
+    padding: 10px 15px 10px 15px;
+    display: block;
+    background: #004900;
+    cursor: pointer;
+}
+
+.mobilenav {
+    width: 100%;
+    overflow-x: hidden;
+    height: 0;
+    z-index: 100;
+    position: fixed;
+    background: rgba(0, 49, 0, .99);
+    transition: .5s;
+    display: block;
+}
+
+.mobilenav a {
+    clear: left;
+    color: #fff;
+    font-size: 22px;
+    display: block;
+    font-family: Roboto, sans-serif;
+    text-decoration: none;
+    text-align: center;
+    padding: 2em 0;
+}
+
+.mobilenav a:hover {
+    background: rgba(255, 255, 255, .1);
+}
+
+.thread{
+    width: 100%;
+    display: table;
+    border: #112010;
+}
+
+.content {
+    display: table-row;
+    background: #112010;
+}
+
+.content a{
+    width: auto;
+    padding: 0;
+    margin-top: 0;
+    background: inherit;
+    font-size: 20px;
+}
+
+.content:hover{
+    background: #123012;
+}
+
+.content dl dt,dd{
+    display: inline;
+}
+
+.content div,dl{
+    display: table-cell;
+    padding: 10px;
+    border: goldenrod solid 1px;
+}
+
+.content dl{
+    width: 150px;
+}
+
+.content dl dd{
+    float: right;
+    text-align: right;
+}
+
+.content div:last-child{
+    width: 200px;
+    text-align: right;
+}
+
+.posts {
+    margin: 10px;
+}
+
+.postreply{
+    background: #112010;
+    display: flex;
+    align-items: stretch;
+    min-height: 150px;
+    margin: 10px;
+    border: goldenrod solid 1px;
+}
+
+.postreply div:first-child{
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.userdata{
+    text-align: right;
+    width: 170px;
+    border-left: white solid 1px;
+    padding: 20px
+}
+
+.reply{
+    padding: 20px;
+    background: #112010;
+    min-height: 220px;
+    margin: 10px;
+    border: goldenrod solid 1px;
+}
+
+.reply form div{
+    overflow-x: auto;
+    color: white;
+    background: #d2d2d2;
+    max-height: 100px;
+    height: 150px;
+    padding: 10px;
+    margin: 5px 0 5px 0;
+}
+
+.reply form div span {
+    color: black;
+}
+
+.create form div span{
+    color: black;
+}
+
+.reply form button {
+    background: goldenrod;
+    padding: 10px;
+    cursor: pointer;
+    width: 20%;
+    border: none;
+    font-weight: bold;
+    font-size: 18px;
+    float: right;
+    margin-top: 10px;
+}
+
+.discordwrapper{
+    display: flex;
+    flex-direction: column;
+    background: #112010;
+    padding: 10px;
+    border: goldenrod solid 1px;
+}
+
+.discordwrapper div{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.discordwrapper div img{
+    float: right;
+    width: 250px;
+    height: 250px;
+}
+
+.discordwrapper a{
+    text-align: center;
+}
+
+.discordwrapper a:hover{
+    background: #113011;
+}
+
+.schedule{
+    background: #112010;
+    border: goldenrod solid 1px;
+    width: 100%;
+}
+
+.schedule iframe{
+    width: 100%;
+    padding: 1em;
+    height: 750px;
+}
+
+.create {
+    background: #112010;
+    padding: 10px;
+    text-align: left;
+}
+
+.create form input{
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #d2d2d2;
+}
+
+.create form button{
+    background: goldenrod;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.create form div{
+    overflow-x: auto;
+    color: white;
+    background: #d2d2d2;
+    max-height: 100px;
+    height: 150px;
+    padding: 10px;
+    margin: 5px 0 5px 0;
+}
+
+.newssum{
+    background: #112010;
+    border: goldenrod solid 1px;
+    padding: 10px;
+    margin: 0 0 20px 0;
+}
+
+.newssum h3{
+    font-size: 22px;
+    padding: 10px;
+    color: #de2c26;
+    font-weight: bold;
+}
+
+.newssum p{
+    padding: 5px;
+}
+
+.newssum a{
+    padding: 5px;
+    margin-top: 0;
+    background: none;
+    font-size: 18px;
+    color: goldenrod;
+}
+
+.newssum a:hover{
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 600px) {
+    .mainnav {
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .wrapper {
+        width: 550px;
+        margin: 0 auto;
+    }
+
+    .lswrapper {
+        width: 550px;
+        margin: 0 auto;
+    }
+
+    .navitem {
+        display: block;
+        text-align: center;
+        flex: 1 0;
+        line-height: 56px;
+        font-weight: 600;
+        color: #fff;
+        font-size: 16px;
+    }
+
+    .navitem:hover {
+        background: rgba(255, 255, 255, .3);
+    }
+
+    .open {
+        display: none;
+    }
+    .logo{
+        height: 30px;
+        cursor: pointer;
+        margin-left: 10px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+
+    .wrapper {
+        width: 1000px;
+    }
+
+    .lswrapper {
+        width: 1000px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .lswrapper div{
+        padding: 20px 30px 20px 30px;
+    }
+
+}
